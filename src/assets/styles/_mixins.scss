@@ -1,0 +1,36 @@
+@mixin cards-wrap($gap) {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(100% + #{$gap});
+    margin-left: calc(#{$gap} / (-2));
+    margin-right: calc(#{$gap} / (-2));
+}
+
+@mixin card($gap, $count) {
+    display: flex;
+    margin-left: calc(#{$gap} / 2);
+    margin-right: calc(#{$gap} / 2);
+    margin-bottom: $gap;
+    width: calc(100% / #{$count} - #{$gap});
+}
+
+@mixin square($size) {
+    height: $size;
+    width: $size;
+    min-height: $size;
+    min-width: $size;
+    aspect-ratio: 1/1;
+}
+
+@mixin nowrap {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@mixin bg-cent {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
+}

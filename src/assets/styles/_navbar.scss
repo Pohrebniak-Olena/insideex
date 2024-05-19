@@ -1,0 +1,95 @@
+@use 'variables';
+@use 'mixins';
+
+.icon-navbar-view {
+    background-image: url(../images/navbar-button.svg);
+}
+
+.navbar {
+    display: flex;
+    flex: 1 1 auto;
+    max-width: max(280px, 17.5rem);
+    padding: 1rem;
+    z-index: 21;
+    // gap: 1rem;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-color: var((--joy-palette-divider), rgba(99, 107, 116, 0.16));
+    transition: transform 0.4s ease 0s;
+    --Icon-color: var(--joy-palette-text-icon);
+    --ListItem-stickyBackground: var(--joy-palette-background-surface);
+    --Sheet-background: var(--joy-palette-background-surface);
+    background-color: var(--joy-palette-background-surface);
+    background-color: var(--joy-palette-background-surface);
+    flex-direction: column;
+    color: var(--variant-plainColor, var(--joy-palette-neutral-plainColor, var(--joy-palette-neutral-700, #32383E)));
+    font-family: var(--joy-fontFamily-body, "Inter", var(--joy-fontFamily-fallback, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"));
+    position: sticky;
+
+    &-header {
+        margin-bottom: 1rem;
+        display: inline-flex;
+        justify-content: space-between;
+    }
+
+    &-logo {
+        display: inline-flex;
+        align-items: center;
+        letter-spacing: -0.025em;
+        color: rgb(255, 255, 255);
+        font-weight: 600;
+        font-size: 1.5rem;
+
+        .icon-logo {
+            @include mixins.square(2.125rem);
+            margin-right: .5rem;
+        }
+    }
+
+    &-button {
+        @include mixins.square(2.25rem);
+        transform: scaleX(-1);
+        transition: .25s;
+
+        i {
+            @include mixins.square(0.99em);
+            @include mixins.bg-cent();
+            background-image: url(../images/navbar-button.svg);
+        }
+    }
+
+
+    @media (max-width:1200.1px) {
+        position: fixed;
+    }
+
+    .navbar-data-section {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+
+        .mark {
+            display: inline-flex;
+            @include mixins.square(1rem);
+            border-radius: 100%;
+            margin-right: .25rem;
+        }
+
+        .title {
+            display: inline-flex;
+            align-items: center;
+            font-size: 1rem;
+            font-weight: 500;
+            color: rgb(134, 142, 150);
+        }
+
+        .value {
+            color: rgb(241, 241, 241);
+            font-weight: 600;
+            font-size: 18px;
+            display: flex;
+            gap: .5rem;
+            flex-wrap: nowrap;
+        }
+    }
+}
