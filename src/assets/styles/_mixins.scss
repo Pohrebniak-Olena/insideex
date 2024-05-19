@@ -34,3 +34,149 @@
     background-size: contain;
     display: block;
 }
+
+// --------- BUTTONS -------------
+
+@mixin btn-gradient {
+    background-image: linear-gradient(135deg, rgb(104, 79, 221) 0%, rgb(47, 146, 172) 100%);
+    color: #ffffff;
+    transition: .25s;
+
+    &:hover {
+        background-image: linear-gradient(135deg, rgba(104, 79, 221, 0.8) 0%, rgba(47, 146, 172, 0.8) 100%);
+    }
+}
+
+@mixin btn-border-color() {
+    position: relative;
+    z-index: 1;
+    color: #ffffff;
+    transition: .25s;
+    border: 1px solid rgb(47, 146, 172);
+    box-sizing: border-box;
+
+    &:hover {
+        border-color: transparent;
+        background-image: linear-gradient(135deg, rgb(104, 79, 221) 0%, rgb(47, 146, 172) 100%);
+    }
+}
+
+@mixin switcher {
+    $border-width: 2px;
+
+    label {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+
+        &::before {
+            width: 100%;
+            height: 100%;
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        &::after {
+            width: calc(50% + $border-width );
+            height: calc(100% - $border-width * 2);
+            transform: translateY(-50%);
+            border-radius: 100%;
+            content: '';
+            position: absolute;
+            left: $border-width;
+            top: 50%;
+            transition: .25s;
+        }
+    }
+
+    input[type='checkbox']:checked+label {
+
+        &::after {
+            left: calc(50% - $border-width * 2);
+        }
+    }
+
+}
+
+
+@mixin switcher-violet-color {
+
+    label {
+        &::before {
+            background-color: rgb(85, 94, 104);
+        }
+
+        &::after {
+            background-color: rgb(255, 255, 255);
+        }
+    }
+
+
+    input[type='checkbox']:checked+label {
+
+        &::before {
+            background-color: rgb(104, 79, 221);
+        }
+
+        &::after {
+            background-color: rgb(255, 255, 255);
+        }
+
+    }
+}
+
+@mixin drop-down{
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+
+
+    .drop-down-list{
+        height: 0;
+        overflow: hidden;
+        transition: .25s;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+
+        .item{
+            transition: .25s;
+            width: 100%;
+        }
+    }
+    .drop-down-btn{
+        position: relative;
+        width: 100%;
+        &::after{
+            transition: all 0.25s ease 0s;
+            position: absolute;
+            content: '';
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            @include bg-cent();
+            background-image: url(./../images/drop-arrow.svg);
+        }
+    }
+    &.active{
+        .drop-down-list{
+            height: auto;
+        }
+        .drop-down-btn{
+            &::after{
+                transform: translateY(-50%) scaleY(-1);
+            }
+        }
+
+    }
+
+
+}

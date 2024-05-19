@@ -15,4 +15,7 @@ import NavBar from './components/NavBar.vue';
     <router-view></router-view>
   </div>
 </div>
+<footer>
+  <p>version 0.1.0</p>
+</footer>
 </template>

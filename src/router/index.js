@@ -9,15 +9,24 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'dashboard',
+      name: 'Dashboard',
       component: DashboardView
     },
-
-    // {
-    // path: '/about',
-    // name: 'about',
-    // component: () => import('../views/AboutView.vue')
-    // }
+    {
+      path: '/wallet',
+      name: 'Wallet',
+      component: () => import('../views/WalletView.vue')
+    },
+    {
+      path: '/account',
+      name: 'Account',
+      component: () => import('../views/Account.vue')
+    },
+    {
+      path: '/active-trans',
+      name: 'ActiveTrans',
+      component: () => import('../views/ActiveTrans.vue')
+    },
 
     {
       path: '/:pathMatch(.*)*',
