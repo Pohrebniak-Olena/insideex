@@ -119,9 +119,49 @@ import '@/assets/styles/_navbar.scss'
                     </RouterLink>
                 </div>
             </div>
+
+
+            <div class="nav-drop-down drop-down" :class="{ 'active': dropDown2 }">
+                <button @click="dropDown2 = !dropDown2" class="nav-item drop-down-btn">
+                    <i class="icon-blocks"></i>
+                    <span>
+                        PayIn QAC
+                    </span>
+                </button>
+                <div class="drop-down-list">
+
+                    <RouterLink class="item" to="{ name: 'Dashboard' }">
+                        Terminals
+                    </RouterLink>
+
+                    <RouterLink class="item" to="{ name: 'Dashboard' }">
+                        Transaction History QAC
+                    </RouterLink>
+                </div>
+            </div>
+
+
+            <div class="nav-drop-down drop-down" :class="{ 'active': dropDown3 }">
+                <button @click="dropDown3 = !dropDown3" class="nav-item drop-down-btn">
+                    <i class="icon-payment"></i>
+                    <span>
+                        PayOut
+                    </span>
+                </button>
+                <div class="drop-down-list">
+                </div>
+            </div>
+
+
+
         </div>
-        gyuhi
-        <div class="MuiBox-root css-0" style="transform: rotate(-180deg); margin-left: auto; display: flex; justify-content: center; align-items: center;"><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeXl2 css-1x60hrx" focusable="false" aria-hidden="true" viewBox="0 0 24 24"><path d="M3.7 7.8a1 1 0 1 0-1.4 1.4l9 8.5a1 1 0 0 0 1.4 0l9-8.5a1 1 0 1 0-1.4-1.4L12 15.6 3.7 7.8Z"></path></svg></div>
+
+        <div class="navbar-buttons-section">
+            <button>
+                <i class="icon-exit"></i>
+                <span class="btn-exit">Exit</span>
+            </button>
+        </div>
     </div>
 </template>
 
@@ -132,6 +172,8 @@ export default {
         return {
             showNavBar: false,
             dropDown1: false,
+            dropDown2: false,
+            dropDown3: false,
         };
     },
     methods: {

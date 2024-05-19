@@ -168,6 +168,11 @@
                 @include mixins.square(2rem);
                 margin-right: .5rem;
             }
+        }
+
+        .nav-item,
+        .drop-down-list .item {
+
 
             &:hover,
             &.active,
@@ -188,16 +193,30 @@
 
             padding-top: 1rem;
 
-            .nav-item,
             .nav-item {
                 font-size: 1.125rem;
+                font-weight: 600;
+            }
+
+            .navbar-navigation-title,
+            .nav-item,
+            .item {
                 padding-left: .625rem;
                 padding-right: .625rem;
-                font-weight: 600;
             }
 
             .drop-down {
                 @include mixins.drop-down();
+
+                .drop-down-list {
+                    gap: .25rem;
+
+                    .item {
+                        border-radius: .25rem;
+                        padding-top: .1rem;
+                        padding-bottom: .1rem;
+                    }
+                }
 
                 .drop-down-btn {
                     &::after {
@@ -215,6 +234,17 @@
             text-transform: uppercase;
             font-size: 1rem;
             color: #868E96;
+            font-weight: 500;
+            letter-spacing: 1.6px;
+        }
+    }
+
+    .btn-exit {
+        font-size: 1rem;
+
+        i {
+            @include mixins.square(1rem);
+            margin-left: .5rem;
         }
     }
 }
@@ -237,4 +267,8 @@
 
 .icon-wallet {
     background-image: url(./../images/nav-wallet.svg);
+}
+
+.icon-exit {
+    background-image: url(./../images/exit.svg);
 }
