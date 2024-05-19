@@ -5,6 +5,10 @@ import HeaderComponent from './components/HeaderComponent.vue';
 </script>
 
 <template>
-  <HeaderComponent />
-  <router-view></router-view>
+<div class="wrapper">
+  <div class="wrapper-view">
+    <HeaderComponent />
+    <router-view></router-view>
+  </div>
+</div>
 </template>
