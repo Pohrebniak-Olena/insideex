@@ -241,7 +241,7 @@
 
     .btn-exit {
         font-size: 1rem;
-
+        flex: 1 1 auto;
         i {
             @include mixins.square(1rem);
             margin-left: .5rem;

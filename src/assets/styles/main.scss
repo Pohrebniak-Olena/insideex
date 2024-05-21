@@ -281,6 +281,11 @@ i {
     background-image: url(../images/logo.svg);
 }
 
+.inl-flex{
+    display: inline-flex;
+    align-items: center;
+}
+
 @media (min-width: 1200.1px) {
     html {
         font-size: 1.0582vw;

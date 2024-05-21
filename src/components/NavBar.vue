@@ -157,9 +157,9 @@ import '@/assets/styles/_navbar.scss'
         </div>
 
         <div class="navbar-buttons-section">
-            <button>
+            <button class="btn-exit">
                 <i class="icon-exit"></i>
-                <span class="btn-exit">Exit</span>
+                <span>Exit</span>
             </button>
         </div>
     </div>

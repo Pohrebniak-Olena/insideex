@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <main>
         <h1>My Wallet</h1>
-    </div>
+    </main>
 </template>

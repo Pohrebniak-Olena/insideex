@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <main>
         <h1>ActiveTrans</h1>
-    </div>
+    </main>
 </template>

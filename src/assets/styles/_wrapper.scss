@@ -1,3 +1,6 @@
+@use 'variables';
+@use 'mixins';
+
 .wrapper {
     display: flex;
     flex-direction: row;
@@ -6,9 +9,218 @@
     padding: 0 max(38px, 2.375rem);
     min-height: calc(100vh - 132px);
 
+    line-height: 150%;
+
     &-view {
         display: flex;
         flex-direction: column;
         flex: 1 1 auto;
+
+        main {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .h1 {
+            color: rgb(241, 241, 241);
+            font-size: 1.75rem;
+            font-weight: 600;
+            line-height: 150%;
+            padding: 1.25rem 0 1rem;
+            display: inline-flex;
+        }
+    }
+}
+
+.looking-period {
+    .title {
+        font-weight: 400;
+        color: rgb(206, 212, 218);
+    }
+
+    margin-bottom: 2.25rem;
+    gap: .5rem;
+}
+
+.btn-date {
+    font-size: .875rem;
+    padding: .75rem 1.25rem;
+    color: #f1f1f1;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(50, 56, 62);
+    border-radius: .375rem;
+
+    i {
+        margin-right: .5rem;
+        @include mixins.square(1.125rem);
+    }
+
+    &:hover {
+        background-color: var(--variant-outlinedHoverBg, var(--joy-palette-neutral-outlinedHoverBg, var(--joy-palette-neutral-100, #F0F4F8)));
+    }
+}
+
+.icon-calendar {
+    background-image: url(../images/calendar.svg);
+}
+
+.icon-turnovers {
+    background-image: url(../images/turnovers.svg);
+}
+
+.icon-percent{
+    background-image: url(../images/percent.svg);
+}
+
+.icon-statistics{
+    background-image: url(../images/statistics.svg);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    background-color: rgb(17, 19, 23);
+
+    .card-header {
+        display: inline-flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        background-color: rgb(24, 25, 26);
+        border-radius: 1rem 1rem 0px 0px;
+
+        .title {
+            display: inline-flex;
+            justify-content: flex-start;
+            align-items: center;
+            font-size: 1.125rem;
+            letter-spacing: -0.025em;
+            font-weight: 600;
+        }
+
+        i {
+            @include mixins.square(2.5rem)
+        }
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-date {
+        --Icon-fontSize: calc(1em * var(--joy-lineHeight-md, 1.5));
+        margin: var(--Typography-margin, 0px);
+        display: block;
+        font-family: var(--joy-fontFamily-body, "Inter", var(--joy-fontFamily-fallback, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"));
+        line-height: var(--joy-lineHeight-md, 1.5);
+        color: rgb(206, 212, 218);
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    .card-table {
+        display: flex;
+        flex-direction: column;
+
+        .card-table-title {
+            color: rgb(206, 212, 218);
+            font-size: 1rem;
+        }
+
+        .card-table-value {
+            letter-spacing: -0.025em;
+            color: rgb(241, 241, 241);
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .card-table-tr {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: .5rem;
+
+            &:not(:first-child) {
+                margin-top: .75rem;
+                padding-top: .75rem;
+                border-top: 1px solid rgba(159, 166, 173, 0.16);
+            }
+        }
+    }
+}
+
+
+
+// dashboard
+
+.main-dashboard {
+
+    .cards-grid,
+    .cards-col {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .cards-col,
+    .cards-chart{
+        flex-direction: column;
+    }
+
+    .cards-col{
+
+    }
+
+    .card-transaction{
+        
+        .card-body{
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 2rem;
+        }
+
+        .card-chart{
+
+            i{
+                @include mixins.square(1rem);
+                border-radius: 100%;
+            }
+
+            .chart{
+                @include mixins.square(17rem);
+                font-size: 2rem;
+                font-weight: 600;
+                color: rgb(241, 241, 241);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            &-legend{
+                display: flex;
+                flex-direction: column;
+                margin-top: 1rem;
+                gap: .5rem;
+            }
+
+        }
+    }
+
+    .card-header {
+        padding: 1rem 1.5rem;
+    }
+
+    .card-body {
+        padding: 1.5rem;
+    }
+
+    .card{
+        flex-grow: 1;
     }
 }
