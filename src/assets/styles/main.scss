@@ -286,6 +286,18 @@ i {
     align-items: center;
 }
 
+.icon-eye-close{
+    background-image: url(../images/eye-close.svg);
+}
+
+.icon-eye-open{
+    background-image: url(../images/eye-open.svg);
+}
+
+.icon-copy{
+    background-image: url(../images//copy.svg);
+}
+
 @media (min-width: 1200.1px) {
     html {
         font-size: 1.0582vw;
