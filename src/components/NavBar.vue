@@ -86,7 +86,7 @@ import '@/assets/styles/_navbar.scss'
                 </span>
             </RouterLink>
 
-            <RouterLink class="nav-item" :to="{ name: 'Account' }">
+            <RouterLink class="nav-item" :to="{ name: 'ActiveTrans' }">
                 <span>
                     Active Transactions
                 </span>
