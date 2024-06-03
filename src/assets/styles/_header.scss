@@ -47,6 +47,10 @@
                 color: rgb(134, 142, 150);
             }
 
+            .value{
+                color: #ffffff;
+            }
+
             &.data-line-user {
                 i {
                     @include mixins.square(1.5rem);
@@ -120,7 +124,6 @@
             border-radius: .5rem;
             overflow: hidden;
 
-            .item {}
         }
     }
 }

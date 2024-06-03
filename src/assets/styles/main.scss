@@ -277,25 +277,78 @@ i {
     display: inline-block;
 }
 
-.icon-logo{
+.icon-logo {
     background-image: url(../images/logo.svg);
 }
 
-.inl-flex{
+.inl-flex {
     display: inline-flex;
     align-items: center;
 }
 
-.icon-eye-close{
+.icon-eye-close {
     background-image: url(../images/eye-close.svg);
 }
 
-.icon-eye-open{
+.icon-eye-open {
     background-image: url(../images/eye-open.svg);
 }
 
-.icon-copy{
-    background-image: url(../images//copy.svg);
+.icon-copy {
+    background-image: url(../images/copy.svg);
+}
+
+.icon-copy-fill {
+    background-image: url(../images/copy-fill.svg);
+}
+
+.icon-qr {
+    background-image: url(../images/qr.svg);
+}
+
+.icon-search{
+    background-image: url(../images/search.svg);
+}
+
+.icon-refresh {
+    background-image: url(../images/refresh.svg);
+}
+
+.icon-check {
+    background-image: url(../images/check.svg);
+}
+
+.cancel{
+    color: #A51818;
+}
+
+.tabs {
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+
+    button {
+        padding: .375rem 1rem;
+        background-color: rgb(24, 25, 26);
+
+        &:hover {
+            background-image: linear-gradient(135deg, rgb(104, 79, 221) 0%, rgb(47, 146, 172) 100%);
+
+        }
+    }
+
+    button:first-child {
+        border-top-left-radius: .375rem;
+    }
+    button:last-child {
+        border-top-right-radius: .375rem;
+    }
+}
+
+input[type='checkbox']{
+    position: relative;
+
+    
 }
 
 @media (min-width: 1200.1px) {

@@ -7,19 +7,21 @@
                 <table>
                     <thead>
                         <tr>
-                            <td>Card name</td>
-                        </tr>
-                        <tr>
-                            <td>Card Number</td>
-                        </tr>
-                        <tr>
-                            <td>Date and Time</td>
-                        </tr>
-                        <tr>
-                            <td>Rate</td>
-                        </tr>
-                        <tr>
-                            <td>Action</td>
+                            <th>
+                                <p>Card name</p>
+                            </th>
+                            <th>
+                                <p>Card Number</p>
+                            </th>
+                            <th>
+                                <p>Date and Time</p>
+                            </th>
+                            <th>
+                                <p>Rate</p>
+                            </th>
+                            <th>
+                                <p>Action</p>
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -40,25 +42,27 @@
                 <table>
                     <thead>
                         <tr>
-                            <td>Card name</td>
-                        </tr>
-                        <tr>
-                            <td>Card Number</td>
-                        </tr>
-                        <tr>
-                            <td>Date and Time</td>
-                        </tr>
-                        <tr>
-                            <td>Rate</td>
-                        </tr>
-                        <tr>
-                            <td>Action</td>
+                            <th>
+                                <p>Card name</p>
+                            </th>
+                            <th>
+                                <p>Card Number</p>
+                            </th>
+                            <th>
+                                <p>Date and Time</p>
+                            </th>
+                            <th>
+                                <p>Rate</p>
+                            </th>
+                            <th>
+                                <p>Action</p>
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>
-                                
+
                             </td>
                         </tr>
                     </tbody>

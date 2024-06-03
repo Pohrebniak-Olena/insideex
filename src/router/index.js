@@ -23,6 +23,11 @@ const router = createRouter({
       component: () => import('../views/Account.vue')
     },
     {
+      path: '/cards',
+      name: 'Cards',
+      component: () => import('../views/Cards.vue')
+    },
+    {
       path: '/active-trans',
       name: 'ActiveTrans',
       component: () => import('../views/ActiveTrans.vue')

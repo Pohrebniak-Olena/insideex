@@ -259,9 +259,13 @@ input{
     min-width: 0px;
 }
 
+table{
+    border-spacing: 0;
+}
+
 ::-moz-selection ,
 ::selection {
-    background-color:  rgba(116, 222, 124, .6);
+    background-color:  rgba(131, 60, 255, 0.6);
     color: #ffffff;
 }
 
@@ -283,10 +287,10 @@ input{
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(53, 53, 53, 0.3);
     border-radius: 49px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color: #122226;
+    background-color: #3a3a3a83;
 }

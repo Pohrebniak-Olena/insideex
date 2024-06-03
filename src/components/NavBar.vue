@@ -110,11 +110,11 @@ import '@/assets/styles/_navbar.scss'
                 </button>
                 <div class="drop-down-list">
 
-                    <RouterLink class="item" to="{ name: 'Dashboard' }">
+                    <RouterLink class="item" :to="{ name: 'Cards' }">
                         Cards
                     </RouterLink>
 
-                    <RouterLink class="item" to="{ name: 'Dashboard' }">
+                    <RouterLink class="item" :to="{ name: 'Dashboard' }">
                         Transaction History
                     </RouterLink>
                 </div>

@@ -7,7 +7,7 @@
 
 .navbar {
     display: flex;
-    flex: 1 1 auto;
+    flex: 1 1 max(280px, 17.5rem);
     max-width: max(280px, 17.5rem);
     padding: 1rem;
     z-index: 21;
@@ -129,7 +129,7 @@
 
         .switcher-title {
             text-transform: uppercase;
-            color: 32383E;
+            color: #32383E;
             letter-spacing: 1.05px;
             line-height: 120%;
             margin-bottom: .5rem;
