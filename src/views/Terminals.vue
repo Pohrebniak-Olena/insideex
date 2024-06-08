@@ -1,13 +1,6 @@
 <template>
-    <main class="main main-cards">
-        <h1 class="h1">Cards</h1>
-
-        <div class="row row-search">
-            <div class="input-search">
-                <input type="text">
-                <i class="icon-search"></i>
-            </div>
-        </div>
+    <main class="main main-terminals">
+        <h1 class="h1">Terminals</h1>
 
         <div class="row-filters">
 
@@ -54,46 +47,14 @@
                     </div>
                 </div>
 
-                <div class="drop-down-filter" :class="{ 'active': dropDownTag }">
-                    <div class="drop-down-cover" @click="dropDownTag = false"></div>
-                    <button @click="dropDownTag = !dropDownTag" class="drop-down-btn">
-                        <span>
-                            Filter By Tag
-                        </span>
-                    </button>
-                    <div class="drop-down-list">
-                        <li class="item">All</li>
-                        <li class="item">Tag #1</li>
-                    </div>
-                </div>
-            </div>
-
-            <div class="switcher-filter">
-                <div class="switch">
-                    <p class="switcher-title">
-                        Accessibility for all:
-                    </p>
-                    <div class="switcher">
-                        <input type="checkbox" id="switcher-access">
-                        <label for="switcher-access">
-                            <div class="label-prompt">
-                                <span>On</span>
-                                <span>Off</span>
-                            </div>
-                        </label>
-                    </div>
-                </div>
+                <button class="btn-border-color">
+                    Reset All filters
+                </button>
             </div>
 
             <div class="buttons-wrap">
                 <button class="btn-border-color btn-add">
-                    Add Tag
-                </button>
-                <button class="btn-border-color btn-add">
-                    Add Card
-                </button>
-                <button class="btn-border-color">
-                    Reset All filters
+                    Add Terminal
                 </button>
             </div>
 
@@ -103,24 +64,16 @@
             <table>
                 <thead>
                     <tr>
-                        <th>
-                            <p class="checkbox">
-                                <input type="checkbox" class="td-checkbox" id="checkbox1">
-                                <label for="checkbox1">-</label>
-                            </p>
-                        </th>
-                        <th>Card</th>
+                        <th>Terminal</th>
                         <th>Turnover</th>
-                        <th>
-                            Daily Limit
-                        </th>
-                        <th>
-                            Month Limit
-                        </th>
-                        <th>Daily Count</th>
+                        <th>Daily Limit</th>
+                        <th>Monthly Limit</th>
+                        <th>Number</th>
+                        <th>Dily:Success</th>
+                        <th>Success/Failed</th>
                         <th>Bank</th>
-                        <th>Tag</th>
-                        <th>Accessibility</th>
+                        <th>Available</th>
+                        
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -130,35 +83,86 @@
                     </tr> -->
                     <tr>
                         <td>
-                            <p class="checkbox">
-                                <input type="checkbox" class="td-checkbox" id="checkbox1">
-                                <label for="checkbox1">-</label>
-                            </p>
+                            <p class="link-wrap link-full">https://send.monobank.ua/jsr/r93rujef84</p>
+                            <p>Oleg 2</p>
                         </td>
                         <td>
-                            <p>242343***4364</p>
-                            <p>Saluna2</p>
-                        </td>
-                        <td>Daily: 345UAH</td>
-                        <td>Monthly: 345UAH</td>
-                        <td>
-                            32000 UAH
+                            <p>Dily: 0 UAH</p>
+                            <p>Monthly: 0 UAH</p>
                         </td>
                         <td>
-                            0/204
+                            13244.00 UAH
+                        </td>
+                        <td>
+                            754000.00 UAH
+                        </td>
+                        <td>
+                           03 / 200
+                        </td>
+                        <td>
+                            0 / 0
+                        </td>
+                        <td>
+                            4 / 7
                         </td>
                         <td>
                             Monobank
                         </td>
-                        <td>not found</td>
                         <td class="switcher-td">
                             <p class="switcher">
-                                <input type="checkbox" id="available-switcher-cards">
-                                <label for="available-switcher-cards"></label>
+                                <input type="checkbox" id="available-switcher">
+                                <label for="available-switcher"></label>
                             </p>
                         </td>
                         <td>
-                            <button class="btn-td-more"> Change</button>
+                            <button 
+                            @click="showSideBar"
+                            class="btn-td-more"> Details</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        
+        <h2 class="h1">Archive Terminal</h2>
+        <div class="section-table section-table-archive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Terminal</th>
+                        <th>Turnover</th>
+                        <th>Daily Limit</th>
+                        <th>Monthly Limit</th>
+                        <th>Bank</th>
+                        
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- <tr>
+                        <td>Not found</td>
+                    </tr> -->
+                    <tr>
+                        <td>
+                            <p class="link-wrap link-full">https://send.monobank.ua/jsr/r93rujef84</p>
+                            <p>Oleg 2</p>
+                        </td>
+                        <td>
+                            <p>Dily: 0 UAH</p>
+                            <p>Monthly: 0 UAH</p>
+                        </td>
+                        <td>
+                            13244.00 UAH
+                        </td>
+                        <td>
+                            754000.00 UAH
+                        </td>
+                        <td>
+                            Monobank
+                        </td>
+                        <td>
+                            <button class="btn-td-border">Restore</button>
                         </td>
                     </tr>
                 </tbody>
@@ -174,7 +178,12 @@ export default {
         return {
             apiconnfig: false,
             dropDownBank: false,
-            dropDownTag: false
+            dropDownSort: false
+        }
+    },
+    methods:{
+        showSideBar(){
+            this.$store.commit("setShowSideBar", true);
         }
     }
 }

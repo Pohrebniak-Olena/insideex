@@ -1,6 +1,6 @@
 <template>
-    <main class="main main-cards">
-        <h1 class="h1">Cards</h1>
+    <main class="main main-trans">
+        <h1 class="h1">History Transactions QAC</h1>
 
         <div class="row row-search">
             <div class="input-search">
@@ -54,11 +54,11 @@
                     </div>
                 </div>
 
-                <div class="drop-down-filter" :class="{ 'active': dropDownTag }">
-                    <div class="drop-down-cover" @click="dropDownTag = false"></div>
-                    <button @click="dropDownTag = !dropDownTag" class="drop-down-btn">
+                <div class="drop-down-filter" :class="{ 'active': dropDownStatus }">
+                    <div class="drop-down-cover" @click="dropDownStatus = false"></div>
+                    <button @click="dropDownStatus = !dropDownStatus" class="drop-down-btn">
                         <span>
-                            Filter By Tag
+                            Filter By Status
                         </span>
                     </button>
                     <div class="drop-down-list">
@@ -66,31 +66,34 @@
                         <li class="item">Tag #1</li>
                     </div>
                 </div>
-            </div>
 
-            <div class="switcher-filter">
-                <div class="switch">
-                    <p class="switcher-title">
-                        Accessibility for all:
-                    </p>
-                    <div class="switcher">
-                        <input type="checkbox" id="switcher-access">
-                        <label for="switcher-access">
-                            <div class="label-prompt">
-                                <span>On</span>
-                                <span>Off</span>
-                            </div>
-                        </label>
+                <div class="drop-down-filter" :class="{ 'active': dropDownSort }">
+                    <div class="drop-down-cover" @click="dropDownSort = false"></div>
+                    <button @click="dropDownSort = !dropDownSort" class="drop-down-btn">
+                        <span>
+                            Sort By
+                        </span>
+                    </button>
+                    <div class="drop-down-list">
+                        <li class="item">All</li>
+                        <li class="item">value less</li>
+                        <li class="item">value High</li>
                     </div>
+                </div>
+
+                
+                <div class="inl-flex looking-period">
+                
+                    <button class="btn-date">
+                        <i class="icon-calendar"></i>
+                        Choose period
+                    </button>
                 </div>
             </div>
 
             <div class="buttons-wrap">
-                <button class="btn-border-color btn-add">
-                    Add Tag
-                </button>
-                <button class="btn-border-color btn-add">
-                    Add Card
+                <button class="btn-border-color">
+                    Download
                 </button>
                 <button class="btn-border-color">
                     Reset All filters
@@ -103,24 +106,15 @@
             <table>
                 <thead>
                     <tr>
-                        <th>
-                            <p class="checkbox">
-                                <input type="checkbox" class="td-checkbox" id="checkbox1">
-                                <label for="checkbox1">-</label>
-                            </p>
-                        </th>
+                        <th>Name</th>
                         <th>Card</th>
-                        <th>Turnover</th>
-                        <th>
-                            Daily Limit
-                        </th>
-                        <th>
-                            Month Limit
-                        </th>
-                        <th>Daily Count</th>
+                        <th>Value UAH</th>
+                        <th>Value USDT</th>
                         <th>Bank</th>
-                        <th>Tag</th>
-                        <th>Accessibility</th>
+                        <th>Start</th>
+                        <th>End</th>
+                        <th>State</th>
+                        
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -130,35 +124,62 @@
                     </tr> -->
                     <tr>
                         <td>
-                            <p class="checkbox">
-                                <input type="checkbox" class="td-checkbox" id="checkbox1">
-                                <label for="checkbox1">-</label>
-                            </p>
+                            <p>Sofa 1</p>
                         </td>
                         <td>
-                            <p>242343***4364</p>
-                            <p>Saluna2</p>
+                            <p class="link-wrap link-full">https://send.monobank.ua/jsr/r93rujef84</p>
+                            <p style="font-weight: 600;">Monobank</p>
                         </td>
-                        <td>Daily: 345UAH</td>
-                        <td>Monthly: 345UAH</td>
-                        <td>
-                            32000 UAH
+                        <td style="font-weight: 700;">
+                            2453.00
                         </td>
                         <td>
-                            0/204
+                            11.43
                         </td>
                         <td>
                             Monobank
                         </td>
-                        <td>not found</td>
-                        <td class="switcher-td">
-                            <p class="switcher">
-                                <input type="checkbox" id="available-switcher-cards">
-                                <label for="available-switcher-cards"></label>
-                            </p>
+                        <td>
+                           19.05.2024 12:45
                         </td>
                         <td>
-                            <button class="btn-td-more"> Change</button>
+                           07.02.2025 12:46
+                        </td>
+                        <td style="font-weight:600;">
+                            <p style="color:#C51919;">Canceled</p>
+                        </td>
+                        <td>
+                            <button class="btn-td-more"> Details</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Maks Yavorsky</p>
+                        </td>
+                        <td>
+                            <p class="link-wrap link-full">https://send.monobank.ua/jsr/r93rujef84</p>
+                            <p style="font-weight: 600;">Monobank</p>
+                        </td>
+                        <td style="font-weight: 700;">
+                            2453.00
+                        </td>
+                        <td>
+                            65.62
+                        </td>
+                        <td>
+                            Monobank
+                        </td>
+                        <td>
+                           19.05.2024 12:45
+                        </td>
+                        <td>
+                           07.02.2025 12:46
+                        </td>
+                        <td style="font-weight:600;">
+                            <p style="color:#36B830">Paid</p>
+                        </td>
+                        <td>
+                            <button class="btn-td-more"> Details</button>
                         </td>
                     </tr>
                 </tbody>
@@ -174,7 +195,8 @@ export default {
         return {
             apiconnfig: false,
             dropDownBank: false,
-            dropDownTag: false
+            dropDownStatus: false,
+            dropDownSort: false
         }
     }
 }

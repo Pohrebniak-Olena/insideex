@@ -277,6 +277,15 @@ i {
     display: inline-block;
 }
 
+.input-wrap{
+    position: relative;
+    display: inline-flex;
+}
+input{
+    display: flex;
+    flex: 1 0 auto;
+}
+
 .icon-logo {
     background-image: url(../images/logo.svg);
 }
@@ -306,7 +315,7 @@ i {
     background-image: url(../images/qr.svg);
 }
 
-.icon-search{
+.icon-search {
     background-image: url(../images/search.svg);
 }
 
@@ -318,7 +327,7 @@ i {
     background-image: url(../images/check.svg);
 }
 
-.cancel{
+.cancel {
     color: #A51818;
 }
 
@@ -340,15 +349,40 @@ i {
     button:first-child {
         border-top-left-radius: .375rem;
     }
+
     button:last-child {
         border-top-right-radius: .375rem;
     }
 }
 
-input[type='checkbox']{
-    position: relative;
+.checkbox {
+    input[type='checkbox'] {
+        position: relative;
 
-    
+        &+label {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.63rem;
+            width: 1.25rem;
+            height: 1.25rem;
+            appearance: none;
+            border: 1px solid rgb(241, 241, 241);
+            border-radius: 6px;
+            color: transparent;
+        }
+
+        &:checked + label{
+            background-color: rgb(241, 241, 241);
+            color: rgb(73, 80, 87);
+        }
+
+    }
 }
 
 @media (min-width: 1200.1px) {

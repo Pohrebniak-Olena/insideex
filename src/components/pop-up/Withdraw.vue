@@ -9,22 +9,19 @@
                     Enter the top-up amount from your deposit
                 </p>
                 <p class="h6">
-                    Min amount - 10 USDT
-                </p>
-
-                <p class="deposit">
-                    DEPOSIT: 0.00 USDT
+                    Min amount - more 500 USDT
                 </p>
             </div>
 
             <div class="pop-up__body">
                 <div class="input-wrap">
-                    <input type="number" placeholder="0"/>
+                    <input type="number" v-model="valueInput" placeholder="0"/>
                 </div>
 
                 <div class="pop-up__buttons">
-                    <button class="btn-confirm" disabled>Submit</button>
-                    <button class="btn-confirm">Return trading balance</button>
+                    <button class="btn-confirm"
+                    :disabled=!valueInput
+                    >Submit</button>
                 </div>
             </div>
         </div>
@@ -37,15 +34,15 @@ import { mapState } from "vuex";
 export default{
     data() {
         return {
-
+            valueInput: 0,
         }
     },
     computed: {
-        ...mapState(["popUpTradingBalance"]),
+        ...mapState(["popUpWithdraw"]),
     },
     methods: {
         closeModal(){
-            this.$store.commit("setPopUpTradingBalance", false);
+            this.$store.commit("setPopUpWithdraw", false);
         }
     }
 }

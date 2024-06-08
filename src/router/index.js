@@ -23,6 +23,21 @@ const router = createRouter({
       component: () => import('../views/Account.vue')
     },
     {
+      path: '/transactions',
+      name: 'TransHistory',
+      component: () => import('../views/TransHistory.vue')
+    },
+    {
+      path: '/transactions-qac',
+      name: 'TransHistoryQAC',
+      component: () => import('../views/TransHistoryQAC.vue')
+    },
+    {
+      path: '/terminals',
+      name: 'Terminals',
+      component: () => import('../views/Terminals.vue')
+    },
+    {
       path: '/cards',
       name: 'Cards',
       component: () => import('../views/Cards.vue')

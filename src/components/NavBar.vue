@@ -41,7 +41,7 @@ import '@/assets/styles/_navbar.scss'
         </div>
 
         <div class="navbar-buttons-section ">
-            <button class="btn btn-border-color">
+            <button class="btn btn-border-color" @click="openTradingBalance">
                 Top up trading balance
             </button>
             <RouterLink class="btn btn-gradient" :to="{ name: 'Wallet' }">
@@ -114,7 +114,7 @@ import '@/assets/styles/_navbar.scss'
                         Cards
                     </RouterLink>
 
-                    <RouterLink class="item" :to="{ name: 'Dashboard' }">
+                    <RouterLink class="item" :to="{ name: 'TransHistory' }">
                         Transaction History
                     </RouterLink>
                 </div>
@@ -130,11 +130,11 @@ import '@/assets/styles/_navbar.scss'
                 </button>
                 <div class="drop-down-list">
 
-                    <RouterLink class="item" to="{ name: 'Dashboard' }">
+                    <RouterLink class="item" :to="{ name: 'Terminals' }">
                         Terminals
                     </RouterLink>
 
-                    <RouterLink class="item" to="{ name: 'Dashboard' }">
+                    <RouterLink class="item" :to="{ name: 'TransHistoryQAC' }">
                         Transaction History QAC
                     </RouterLink>
                 </div>
@@ -167,6 +167,8 @@ import '@/assets/styles/_navbar.scss'
 
 
 <script>
+import { mapState } from "vuex";
+
 export default {
     data() {
         return {
@@ -176,10 +178,17 @@ export default {
             dropDown3: false,
         };
     },
+    computed: {
+        ...mapState(["showHideNavbar"]),
+    },
     methods: {
         showHideNavbar() {
-
-        }
+            this.$store.commit("setShowHideNavbar", !showHideNavbar);
+        },
+        openTradingBalance(){
+            this.$store.commit("setPopUpTradingBalance", true);
+        },
+        
     }
 }
 </script>

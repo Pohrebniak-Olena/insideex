@@ -10,7 +10,7 @@
                         <p class="title">
                             Total Balance
                         </p>
-                        <button class="btn-scan">
+                        <button class="btn-scan" @click="showQR">
                             <i class="icon-qr"></i>
                         </button>
                     </div>
@@ -60,7 +60,7 @@
                             <button class="btn btn-gradient">
                                 Top up active balance
                             </button>
-                            <button class="btn btn-border-color">
+                            <button class="btn btn-border-color" @click="showWithdraw">
                                 Withdrawal
                             </button>
                         </div>
@@ -198,10 +198,20 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
+
 export default{
     data(){
         return{
             tabActive:0,
+        }
+    },
+    computed: {
+        ...mapState(["popUpQR"]),
+    },
+    methods: {
+        showWithdraw(){
+            this.$store.commit("setPopUpWithdraw", true);
         }
     }
 }
